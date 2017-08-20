@@ -23,3 +23,12 @@ sudo add-apt-repository \
 sudo apt-get install docker-ce
 
 sudo apt-get install docker-ce
+
+# Install Docker compose
+# See https://docs.docker.com/compose/install/#install-compose
+
+# change X.XX.X based on last release of https://github.com/docker/compose/releases
+dockerComposeVersion=1.15.0
+
+sudo curl -L https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
