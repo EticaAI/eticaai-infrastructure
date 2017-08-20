@@ -40,3 +40,12 @@ sudo chmod +x /usr/local/bin/docker-compose
 ## [docker-compose.yml] Edit image: rocketchat/rocket.chat:develop to specify which image you wish to use (see section Docker Images Available )
 ## [docker-compose.yml] Edit ROOT_URL to match your domain name or IP address
 
+cd /root/cadu/eticaai/rocket.chat
+
+# Start the mongodb server by:
+docker-compose up -d mongo
+
+# The first time you start mongo, you’ll also need to initialize it before being able to use Rocket.Chat. Ensure that mongo is in the running state, then:
+docker-compose up -d mongo-init-replica
+
+# Once you’re sure that mongodb is up and running:
