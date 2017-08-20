@@ -5,6 +5,8 @@
 # See https://docs.docker.com/engine/installation/
 # See https://docs.docker.com/engine/installation/linux/ubuntu/
 
+ssh root@149.56.101.234
+
 sudo apt-get update
 
 sudo apt-get install \
@@ -32,3 +34,9 @@ dockerComposeVersion=1.15.0
 
 sudo curl -L https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
+## scp -r /alligo/code/fititnt/ped-superinfra/sysadmin/cadu/ root@149.56.101.234:/root
+
+## [docker-compose.yml] Edit image: rocketchat/rocket.chat:develop to specify which image you wish to use (see section Docker Images Available )
+## [docker-compose.yml] Edit ROOT_URL to match your domain name or IP address
+
