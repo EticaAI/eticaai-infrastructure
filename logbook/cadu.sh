@@ -7,6 +7,13 @@
 # SO: Ubuntu 16.04 Server (64 bits)
 ################################################################################
 
+# **************************************************************************** #
+# Note: this configurations works well for a VPS on localhost, but since it's  #
+#       a remote server, I will use another strategy, even for first test on   #
+#       cadu.vps.etica.ai server. Anyway, these comands works if you use       #
+#       Ubuntu 16 and want install Minikube (fititnt, 2017-08-21 03:21 BRT)    #
+# **************************************************************************** #
+
 sudo apt update
 sudo apt upgrade
 
@@ -65,4 +72,15 @@ kubectl get pod # wait... until STATUS: running
 # We can see that the pod is now Running and we will now be able to curl it:
 curl $(minikube service hello-minikube --url)
 
+## Kubernetes Dashboard
+# See https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+minikube dashboard
+
 # minikube stop # To stop
+kubectl get pods --all-namespaces
+
+## Tunel URL
+# ssh -L 9090:localhost:9090 root@cadu.vps.etica.ai # error
+
+## Port Forward a Pod
+# See https://github.com/kubernetes/minikube/issues/877
