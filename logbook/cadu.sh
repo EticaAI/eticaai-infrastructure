@@ -41,7 +41,7 @@ sudo curl -L https://github.com/docker/compose/releases/download/$dockerComposeV
 sudo chmod +x /usr/local/bin/docker-compose
 
 ## Run something similiar to this on your host:
-## scp -r /alligo/code/eticaai/eticaai-infrastructure/sysadmin/cadu/ root@cadu.vps.etica.ai:/root/config
+## scp -r /alligo/code/eticaai/eticaai-infrastructure/sysadmin/cadu/* root@cadu.vps.etica.ai:/root/config
 
 ## [docker-compose.yml] Edit image: rocketchat/rocket.chat:develop to specify which image you wish to use (see section Docker Images Available )
 ## [docker-compose.yml] Edit ROOT_URL to match your domain name or IP address
@@ -56,3 +56,10 @@ docker-compose up -d mongo-init-replica
 
 # Once you’re sure that mongodb is up and running:
 docker-compose up -d rocketchat
+
+
+## Load Balancer
+
+cd /root/config/loadbalancer
+
+docker-compose up -d traefik
