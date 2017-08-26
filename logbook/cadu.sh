@@ -5,9 +5,14 @@
 # See https://docs.docker.com/engine/installation/
 # See https://docs.docker.com/engine/installation/linux/ubuntu/
 
-ssh root@149.56.101.234
+# ssh root@cadu.vps.etica.ai
 
-sudo apt-get update
+sudo apt update
+sudo apt upgrade -y
+
+sudo hostnamectl set-hostname cadu.vps.etica.ai
+
+sudo apt install htop
 
 sudo apt-get install \
     apt-transport-https \
@@ -22,7 +27,7 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-sudo apt-get install docker-ce
+sudo apt update
 
 sudo apt-get install docker-ce
 
