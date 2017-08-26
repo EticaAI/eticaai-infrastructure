@@ -40,12 +40,13 @@ dockerComposeVersion=1.15.0
 sudo curl -L https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-## scp -r /alligo/code/fititnt/ped-superinfra/sysadmin/cadu/ root@149.56.101.234:/root
+## Run something similiar to this on your host:
+## scp -r /alligo/code/eticaai/eticaai-infrastructure/sysadmin/cadu/ root@cadu.vps.etica.ai:/root/config
 
 ## [docker-compose.yml] Edit image: rocketchat/rocket.chat:develop to specify which image you wish to use (see section Docker Images Available )
 ## [docker-compose.yml] Edit ROOT_URL to match your domain name or IP address
 
-cd /root/cadu/eticaai/rocket.chat
+cd /root/config/chat
 
 # Start the mongodb server by:
 docker-compose up -d mongo
@@ -54,3 +55,4 @@ docker-compose up -d mongo
 docker-compose up -d mongo-init-replica
 
 # Once you’re sure that mongodb is up and running:
+docker-compose up -d rocketchat
