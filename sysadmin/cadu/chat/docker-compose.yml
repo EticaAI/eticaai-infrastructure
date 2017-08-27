@@ -19,8 +19,8 @@ services:
     ports:
       - 3000:3000
     labels:
-      - "traefik.backend=rocketchat"
-      - "traefik.frontend.rule=Host: your.domain.tld"
+      - "traefik.backend=chat"
+      - "traefik.frontend.rule=Host: chat.etica.ai"
 
   mongo:
     image: mongo:3.2

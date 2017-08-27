@@ -1,5 +1,6 @@
 traefik:
   image: traefik
+  restart: unless-stopped
   command: -c /dev/null --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
   ports:
     - "80:80"
