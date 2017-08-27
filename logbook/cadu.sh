@@ -63,3 +63,20 @@ docker-compose up -d rocketchat
 cd /root/config/loadbalancer
 
 docker-compose up -d traefik
+
+
+################################################################################
+# Cheat cheet                                                                 #
+################################################################################
+
+cd /root/config # base direcotry for configurations
+
+# Start chat
+docker-compose -f ./chat/docker-compose.yml up -d mongo
+docker-compose -f ./chat/docker-compose.yml up -d mongo-init-replica  # Only first time
+docker-compose -f ./chat/docker-compose.yml up -d rocketchat
+
+# Load Balancer
+docker-compose -f ./loadbalancer/docker-compose.yml up -d traefik # Start
+
+docker-compose -f ./loadbalancer/docker-compose.yml restart traefik # Restart

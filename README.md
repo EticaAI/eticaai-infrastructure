@@ -5,7 +5,17 @@ It does not contain everything. There is no guarantee to stay current.
 
 ## Etica.AI cheat sheet for lazy devops people
 
+## Networking
+
+### Ports
+
+```bash
+netstat -ntulp # show all open ports
+```
+
 ### Docker
+
+See Docker Cheat Sheet <https://github.com/wsargent/docker-cheat-sheet>.
 
 #### Stop all Docker conteiners
 

@@ -1,21 +1,18 @@
-traefik:
-  image: traefik
-  restart: unless-stopped
-  command: -c /dev/null --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
-  ports:
-    - "80:80"
-    - "8080:8080"
-  volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
+version: '2'
 
-whoami1:
-  image: emilevauge/whoami
-  labels:
-    - "traefik.backend=whoami"
-    - "traefik.frontend.rule=Host:whoami.docker.localhost"
+services:
+  proxy:
+    image: traefik
+    command: --web --docker --docker.domain=cadu.vps.etica.ai --logLevel=DEBUG
+    networks:
+      - webgateway
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /dev/null:/traefik.toml
 
-whoami2:
-  image: emilevauge/whoami
-  labels:
-    - "traefik.backend=whoami"
-    - "traefik.frontend.rule=Host:whoami.docker.localhost"
+networks:
+  webgateway:
+    driver: bridge
