@@ -76,6 +76,9 @@ docker-compose -f ./chat/docker-compose.yml up -d mongo
 docker-compose -f ./chat/docker-compose.yml up -d mongo-init-replica  # Only first time
 docker-compose -f ./chat/docker-compose.yml up -d rocketchat
 
+# Restart chat...
+docker-compose -f ./chat/docker-compose.yml restart rocketchat
+
 # Load Balancer
 docker-compose -f ./loadbalancer/docker-compose.yml up -d traefik # Start
 

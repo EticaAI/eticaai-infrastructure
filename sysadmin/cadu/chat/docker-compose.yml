@@ -18,9 +18,13 @@ services:
       - mongo
     ports:
       - 3000:3000
+    networks:
+      - chat_public
     labels:
       - "traefik.backend=chat"
+      - "traefik.port=80"
       - "traefik.frontend.rule=Host: chat.etica.ai"
+      - "traefik.docker.network=chat_public"
 
   mongo:
     image: mongo:3.2
@@ -71,3 +75,6 @@ services:
   #    - 443:443
   #  volumes:
   #    - /var/run/docker.sock:/var/run/docker.sock
+networks:
+  chat_public:
+    external: true
