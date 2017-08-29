@@ -22,7 +22,7 @@ services:
       - chat_public
     labels:
       - "traefik.backend=chat"
-      - "traefik.port=80"
+      - "traefik.port=3000"
       - "traefik.frontend.rule=Host: chat.etica.ai"
       - "traefik.docker.network=chat_public"
 

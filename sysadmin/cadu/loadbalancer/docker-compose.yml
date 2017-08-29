@@ -4,6 +4,7 @@ services:
   traefik:
     image: traefik
     command: --web --docker --docker.domain=cadu.vps.etica.ai --logLevel=DEBUG
+    #command: traefik --docker --acme=true --acme.domains='chat.etica.ai' --acme.email='postmaster@etica.ai' --acme.entrypoint=https --acme.storagefile=acme.json --defaultentrypoints=http --defaultentrypoints=https --entryPoints='Name:http Address::80 Redirect.EntryPoint:https' --entryPoints='Name:https Address::443 TLS.Certificates:'
     networks:
       - webgateway
     ports:
@@ -12,7 +13,7 @@ services:
       - "443:443"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /dev/null:/traefik.toml
+      - ./traefik.toml:/traefik.toml
 
 networks:
   webgateway:
