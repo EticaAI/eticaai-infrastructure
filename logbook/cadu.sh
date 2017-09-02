@@ -14,6 +14,19 @@ sudo hostnamectl set-hostname cadu.vps.etica.ai
 
 sudo apt install htop
 
+## Disable IPV6 support
+#
+echo "net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1" | sudo tee /etc/sysctl.d/99-my-disable-ipv6.conf
+
+# ask the system to use it
+sudo service procps reload
+
+# check the result
+cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+##
+
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -83,3 +96,6 @@ docker-compose -f ./chat/docker-compose.yml restart rocketchat
 docker-compose -f ./loadbalancer/docker-compose.yml up -d traefik # Start
 
 docker-compose -f ./loadbalancer/docker-compose.yml restart traefik # Restart
+
+# debug traefik https://docs.traefik.io/configuration/backends/web/#configuration
+curl -s "http://localhost:8080/api" | jq .
