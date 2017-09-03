@@ -12,7 +12,7 @@ sudo apt upgrade -y
 
 sudo hostnamectl set-hostname cadu.vps.etica.ai
 
-sudo apt install htop
+sudo apt install htop tree jq -y
 
 ## Disable IPV6 support
 #
@@ -42,7 +42,7 @@ sudo add-apt-repository \
 
 sudo apt update
 
-sudo apt-get install docker-ce
+sudo apt-get install docker-ce -y
 
 # Install Docker compose
 # See https://docs.docker.com/compose/install/#install-compose
@@ -53,6 +53,7 @@ dockerComposeVersion=1.15.0
 sudo curl -L https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+mkdir /root/config
 ## Run something similiar to this on your host:
 ## scp -r /alligo/code/eticaai/eticaai-infrastructure/sysadmin/cadu/* root@cadu.vps.etica.ai:/root/config
 

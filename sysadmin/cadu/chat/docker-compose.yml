@@ -21,6 +21,8 @@ services:
     labels:
       - "traefik.backend=chat"
       - "traefik.frontend.rule=Host: chat.etica.ai"
+#    networks:
+#      - etica_chat
 
   mongo:
     image: mongo:3.2
@@ -71,3 +73,6 @@ services:
   #    - 443:443
   #  volumes:
   #    - /var/run/docker.sock:/var/run/docker.sock
+
+  #networks:
+  #  etica_chat:
