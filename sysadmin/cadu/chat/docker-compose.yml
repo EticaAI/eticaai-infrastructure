@@ -52,8 +52,10 @@ services:
       - ROCKETCHAT_USER=bot
       - ROCKETCHAT_PASSWORD=botpassword
       - BOT_NAME=bot
-  # you can add more scripts as you'd like here, they need to be installable by npm
-      - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-diagnostics
+       # you can add more scripts as you'd like here, they need to be installable by npm
+       # `npm search hubot-` return list of avalible bots
+      #- EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-diagnostics,hubot-memegeneration,hubot-paste,hubot-rules,hubot-slack,hubot-suggest,hubot-variables,hubot-vimeo,hubot-wikipedia-lang,hubot-youtube
+      - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-diagnostics,hubot-suggest,hubot-vimeo,hubot-wikipedia-lang,hubot-youtube
     depends_on:
       - rocketchat
     labels:

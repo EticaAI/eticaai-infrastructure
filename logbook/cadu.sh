@@ -71,13 +71,15 @@ docker-compose up -d mongo-init-replica
 # Once you’re sure that mongodb is up and running:
 docker-compose up -d rocketchat
 
-
 ## Load Balancer
 
 cd /root/config/loadbalancer
 
 docker-compose up -d traefik
 
+# Hubot
+# REQUERIMENT: log as admin, create a user 'bot', email 'bot@example.com' and password 'botpassword'
+docker-compose up -d hubot
 
 ################################################################################
 # Cheat cheet                                                                 #
@@ -89,9 +91,15 @@ cd /root/config # base direcotry for configurations
 docker-compose -f ./chat/docker-compose.yml up -d mongo
 docker-compose -f ./chat/docker-compose.yml up -d mongo-init-replica  # Only first time
 docker-compose -f ./chat/docker-compose.yml up -d rocketchat
+docker-compose -f ./chat/docker-compose.yml up -d hubot
 
 # Restart chat...
 docker-compose -f ./chat/docker-compose.yml restart rocketchat
+
+# Hubot
+docker-compose -f ./chat/docker-compose.yml up hubot # Very useful for debug, no -d param
+docker-compose -f ./chat/docker-compose.yml restart hubot
+docker-compose -f ./chat/docker-compose.yml stop hubot
 
 # Load Balancer
 docker-compose -f ./loadbalancer/docker-compose.yml up -d traefik # Start
