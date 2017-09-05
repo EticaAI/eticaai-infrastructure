@@ -8,12 +8,12 @@ services:
       - ./uploads:/app/uploads
     environment:
       - PORT=3000
-      - ROOT_URL=http://localhost:3000 # http://149.56.101.234:3000 # old value http://localhost:3000
+      - ROOT_URL=https://chat.etica.ai # http://149.56.101.234:3000 # old value http://localhost:3000
       - MONGO_URL=mongodb://mongo:27017/rocketchat
       - MONGO_OPLOG_URL=mongodb://mongo:27017/local
       - MAIL_URL=smtp://smtp.email
-#       - HTTP_PROXY=http://proxy.domain.com
-#       - HTTPS_PROXY=http://proxy.domain.com
+      - HTTP_PROXY=http://chat.etica.ai
+      - HTTPS_PROXY=https://chat.etica.ai
     depends_on:
       - mongo
     ports:
