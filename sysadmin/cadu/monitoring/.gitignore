@@ -1,0 +1,4 @@
+# TODO: rethink where to store data (fititnt, 2017-09-10 22:02 BRT)
+
+data/*
+data/.gitkeep

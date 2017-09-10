@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    command:
+      - '-config.file=/etc/prometheus/prometheus.yml'
+      - '-storage.local.path=/prometheus'
+    volumes:
+      - ./data/prometheus:/var/run/docker.sock
