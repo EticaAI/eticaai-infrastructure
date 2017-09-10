@@ -19,3 +19,17 @@ services:
       - 9090
     ports:
       - 9090:9090
+    networks:
+      - monitoring
+      - traefik
+      - chat_default
+
+networks:
+  monitoring:
+    driver: bridge
+  traefik:
+    external:
+      name: chat_default
+  chat_default:
+    external:
+      name: chat_default
