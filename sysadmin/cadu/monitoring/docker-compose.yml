@@ -7,4 +7,9 @@ services:
       - '-config.file=/etc/prometheus/prometheus.yml'
       - '-storage.local.path=/prometheus'
     volumes:
-      - ./data/prometheus:/var/run/docker.sock
+      - ./prometheus/:/etc/prometheus/
+      - ./data/prometheus/:/prometheus
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
