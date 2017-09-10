@@ -108,3 +108,6 @@ docker-compose -f ./loadbalancer/docker-compose.yml restart traefik # Restart
 
 # debug traefik https://docs.traefik.io/configuration/backends/web/#configuration
 curl -s "http://localhost:8080/api" | jq .
+
+## Prometheus
+docker-compose -f ./monitoring/docker-compose.yml up # Very useful for debug, no -d param
