@@ -1,6 +1,7 @@
 # Etica.AI Infrastructure Logbook++
-Quick notes on part of what is done in the Etica.AI project infrastructure.
-It does not contain everything. There is no guarantee to stay updated.
+Code and issues of project infrastructure for Etica.AI. Try to follow the
+[Etica.AI on "Learning by Teaching" approach](https://github.com/EticaAI/forum/issues/46)
+when makes sense.
 
 Check also [Etica.AI ChatOps repository](https://github.com/EticaAI/eticaai-chatops).
 
