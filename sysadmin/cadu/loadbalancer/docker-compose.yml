@@ -4,7 +4,7 @@ services:
   traefik:
     image: traefik
     #command: --web --docker --docker.domain=cadu.vps.etica.ai --logLevel=DEBUG
-    command: --web -c /dev/null  --docker --logLevel=DEBUG --docker.watch --acme --acme.storage=/etc/traefik/acme/acme.json --acme.email=postmater@etica.ai --acme.entryPoint=https --entryPoints='Name:http Address::80 Redirect.EntryPoint:https' --entryPoints='Name:https Address::443 TLS' --defaultentrypoints=http,https --acme.domains="chat.etica.ai,cadu.vps.etica.ai"
+    command: --web -c /dev/null  --docker --logLevel=DEBUG --docker.watch --acme --acme.storage=/etc/traefik/acme/acme.json --acme.email=postmater@etica.ai --acme.entryPoint=https --entryPoints='Name:http Address::80 Redirect.EntryPoint:https' --entryPoints='Name:https Address::443 TLS' --defaultentrypoints=http,https --acme.domains="chat.etica.ai,cadu.vps.etica.ai,traefik.cadu.vps.etica.ai,prometheus.cadu.vps.etica.ai,grafana.cadu.vps.etica.ai"
     #command: traefik --docker --acme=true --acme.domains='chat.etica.ai' --acme.email='postmaster@etica.ai' --acme.entrypoint=https --acme.storagefile=acme.json --defaultentrypoints=http --defaultentrypoints=https --entryPoints='Name:http Address::80 Redirect.EntryPoint:https' --entryPoints='Name:https Address::443 TLS.Certificates:'
     networks:
       - traefik
@@ -19,6 +19,8 @@ services:
       - /dev/null:/traefik.toml
       - ./ssl:/etc/traefik/ssl
       - ./acme:/etc/traefik/acme
+    labels:
+      - "traefik.frontend.rule=Host: traefik.cadu.vps.etica.ai"
 
 networks:
   traefik:

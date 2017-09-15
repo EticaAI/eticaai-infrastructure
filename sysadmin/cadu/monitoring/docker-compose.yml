@@ -23,6 +23,8 @@ services:
       - monitoring
       - traefik
       - chat_default
+    labels:
+      - "traefik.frontend.rule=Host: prometheus.cadu.vps.etica.ai"
 
 networks:
   monitoring:
