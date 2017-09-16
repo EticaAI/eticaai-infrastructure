@@ -4,3 +4,9 @@ Code and issues of project infrastructure for Etica.AI. Try to follow the
 when makes sense.
 
 Check also [Etica.AI ChatOps repository](https://github.com/EticaAI/eticaai-chatops).
+
+## Servers
+
+### VPS Cadu
+- [Loogbook](logbook/cadu.sh)
+- [README](sysadmin/cadu/README.md)
