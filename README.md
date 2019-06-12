@@ -1,17 +1,17 @@
 # Etica.AI Infrastructure Logbook++
 
-> **Notice: please check the [ChatOps _for non-DevOps people_ Working Group 2018/01](https://github.com/fititnt/chatops-wg).
-The repository [chatops-wg-infra](https://github.com/fititnt/chatops-wg-infra)
-have a updated version of what is on eticaai-infrastructure repository at this moment.**
+This repository is the very first one on Etica.AI about document how we
+configured VPSs and containers for our usage. Since 2017 things get much more
+complex than a single repository could contain all information. So as 2019
+we use several repositories and not all them are on the EticaAI organization
+at this moment.
 
-Code and issues of project infrastructure for Etica.AI. Try to follow the
-[Etica.AI on "Learning by Teaching" approach](https://github.com/EticaAI/forum/issues/46)
-when makes sense.
+# Etica.AI Infrastructure overview
 
-Check also [Etica.AI ChatOps repository](https://github.com/EticaAI/eticaai-chatops).
+For a more up to date version of our infrastructure, start by checking:
 
-## Servers
+- **Infrastructure/Servers of Etica.AI <https://github.com/orgs/EticaAI/projects/2>**
 
-### VPS Cadu
-- [Loogbook](logbook/cadu.sh)
-- [README](sysadmin/cadu/README.md)
+## Old information on this EticaAI/eticaai-infrastructure repository
+
+See [README-archive.md](README-archive.md).
